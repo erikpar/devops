@@ -1,0 +1,10 @@
+---
+- name: copy gify-panda app
+  copy: src=gify-panda-app dest=/tmp/ owner=root group=root mode=0755
+ 
+- name: copy init
+  copy: src=gif dest=/etc/init/gif.conf owner=root group=root mode=0755
+
+- service:
+    name: gif
+    state: started

@@ -1,0 +1,6 @@
+description "Panda gif"
+author "Erik"
+
+start on runlevel [2345]
+
+exec /usr/bin/python2.7 /tmp/gify-panda-app/gif.py 2>&1 >> /var/log/gif.log

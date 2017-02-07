@@ -1,0 +1,13 @@
+---
+- name: copy counter-panda app
+  copy: src=counter-panda-app dest=/tmp/ owner=root group=root mode=0755
+
+- name: npm install
+  npm: path=/tmp/counter-panda-app
+  
+- name: copy init
+  copy: src=counter dest=/etc/init/counter.conf owner=root group=root mode=0755
+
+- service:
+    name: counter
+    state: started

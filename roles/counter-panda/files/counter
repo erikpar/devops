@@ -1,0 +1,6 @@
+description "Panda counter"
+author "Erik"
+
+start on runlevel [2345]
+
+exec /usr/bin/nodejs /tmp/counter-panda-app/counter-panda-app.js 2>&1 >> /var/log/counter.log
